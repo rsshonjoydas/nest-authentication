@@ -18,8 +18,7 @@
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "no-nested-ternary": "off",
-    "no-unused-vars": "error",
-    "no-useless-constructor": "off"
+    "no-unused-vars": "error"
   },
   "overrides": [
     {
