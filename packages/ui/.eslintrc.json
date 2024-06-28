@@ -1,0 +1,53 @@
+{
+  "extends": [
+    "plugin:@nx/react-typescript",
+    "next",
+    "airbnb",
+    "next/core-web-vitals",
+    "../../.eslintrc.json"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "react/state-in-constructor": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "react/prop-types": "off",
+    "react/function-component-definition": "off",
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/no-redundant-roles": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/no-danger": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "react/require-default-props": "off"
+  },
+  "ignorePatterns": ["!**/*", ".next/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@next/next/no-html-link-for-pages": ["error", "apps/my-next-app/pages"]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
+}
