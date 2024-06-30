@@ -3,7 +3,11 @@ import { Args, Context, Mutation, Resolver } from '@nestjs/graphql';
 import { Response } from 'express';
 
 import { ActivationDto, RegisterDto } from './dto/user.dto';
-import { ActivationResponse, RegisterResponse } from './types/user.types';
+import {
+  ActivationResponse,
+  LoginResponse,
+  RegisterResponse,
+} from './types/user.types';
 import { UsersService } from './users.service';
 
 @Resolver('User')
@@ -37,5 +41,14 @@ export class UsersResolver {
       context.res,
     );
     return activate;
+  }
+
+  @Mutation(() => LoginResponse)
+  async login(
+    @Args('email') email: string,
+    @Args('password') password: string,
+  ): Promise<LoginResponse> {
+    const loginUser = await this.userService.login({ email, password });
+    return loginUser;
   }
 }

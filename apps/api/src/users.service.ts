@@ -5,8 +5,9 @@ import * as bcrypt from 'bcrypt';
 import { Response } from 'express';
 import { PrismaService } from 'prisma/prisma.service';
 
-import { ActivationDto, RegisterDto } from './dto/user.dto';
+import { ActivationDto, LoginDto, RegisterDto } from './dto/user.dto';
 import { EmailService } from './email/email.service';
+import { TokenSender } from './utils/sendToken';
 
 interface UserData {
   name: string;
@@ -129,5 +130,42 @@ export class UsersService {
     });
 
     return { user, response };
+  }
+
+  private static async comparePassword(
+    password: string,
+    hashedPassword: string,
+  ): Promise<boolean> {
+    const checkPassword = await bcrypt.compare(password, hashedPassword);
+    return checkPassword;
+  }
+
+  /**
+   * @description login exist user with email and password
+   * @function {@link login}
+   * @param {LoginDto} loginDto
+   * @return {*}
+   * @memberof UsersService
+   */
+  async login(loginDto: LoginDto) {
+    const { email, password } = loginDto;
+    const user = await this.prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
+
+    if (user && (await UsersService.comparePassword(password, user.password))) {
+      const tokenSender = new TokenSender(this.configService, this.jwtService);
+      return tokenSender.sendToken(user);
+    }
+    return {
+      user: null,
+      accessToken: null,
+      refreshToken: null,
+      error: {
+        message: 'Invalid email or password',
+      },
+    };
   }
 }
