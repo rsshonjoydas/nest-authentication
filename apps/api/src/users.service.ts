@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService, JwtVerifyOptions } from '@nestjs/jwt';
@@ -167,5 +168,19 @@ export class UsersService {
         message: 'Invalid email or password',
       },
     };
+  }
+
+  /**
+   * @description get logged in user protected by auth guard
+   * @function {@link getLoggedInUser}
+   * @param {*} req
+   * @return {*}
+   * @memberof UsersService
+   */
+  async getLoggedInUser(req: any) {
+    const { user } = req;
+    const refreshToken = req.refreshtoken;
+    const accessToken = req.accesstoken;
+    return { user, refreshToken, accessToken };
   }
 }
