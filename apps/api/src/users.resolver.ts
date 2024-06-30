@@ -7,6 +7,7 @@ import { AuthGuard } from './guards/auth.guard';
 import {
   ActivationResponse,
   LoginResponse,
+  LogoutResponse,
   RegisterResponse,
 } from './types/user.types';
 import { UsersService } from './users.service';
@@ -58,5 +59,12 @@ export class UsersResolver {
   async getLoggedInUser(@Context() context: { req: Request }) {
     const user = await this.userService.getLoggedInUser(context.req);
     return user;
+  }
+
+  @Query(() => LogoutResponse)
+  @UseGuards(AuthGuard)
+  async logOutUser(@Context() context: { req: Request }) {
+    const logoutUser = await this.userService.logout(context.req);
+    return logoutUser;
   }
 }
