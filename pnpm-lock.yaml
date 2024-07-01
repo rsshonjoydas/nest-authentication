@@ -218,6 +218,12 @@ importers:
       '@apollo/client':
         specifier: ^3.10.8
         version: 3.10.8(@types/react@18.3.3)(graphql-ws@5.14.3(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(subscriptions-transport-ws@0.11.0(graphql@16.9.0))
+      '@hookform/resolvers':
+        specifier: ^3.6.0
+        version: 3.6.0(react-hook-form@7.52.0(react@18.3.1))
+      class-variance-authority:
+        specifier: ^0.7.0
+        version: 0.7.0
       graphql:
         specifier: ^16.9.0
         version: 16.9.0
@@ -233,9 +239,21 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
+      react-hook-form:
+        specifier: ^7.52.0
+        version: 7.52.0(react@18.3.1)
+      react-tooltip:
+        specifier: ^5.27.0
+        version: 5.27.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      sonner:
+        specifier: ^1.5.0
+        version: 1.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       ui:
         specifier: workspace:^
         version: link:../../packages/ui
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@types/js-cookie':
         specifier: ^3.0.6
@@ -1938,6 +1956,14 @@ packages:
       }
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+
+  '@hookform/resolvers@3.6.0':
+    resolution:
+      {
+        integrity: sha512-UBcpyOX3+RR+dNnqBd0lchXpoL8p4xC21XP8H6Meb8uve5Br1GCnmg0PcBoKKqPKgGu9GHQ/oygcmPrQhetwqw==,
+      }
+    peerDependencies:
+      react-hook-form: ^7.0.0
 
   '@humanwhocodes/config-array@0.11.14':
     resolution:
@@ -4615,6 +4641,12 @@ packages:
     resolution:
       {
         integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==,
+      }
+
+  classnames@2.5.1:
+    resolution:
+      {
+        integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==,
       }
 
   clean-css@4.2.4:
@@ -9561,6 +9593,15 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
+  react-hook-form@7.52.0:
+    resolution:
+      {
+        integrity: sha512-mJX506Xc6mirzLsmXUJyqlAI3Kj9Ph2RhplYhUVffeOQSnubK2uVqBFOBJmvKikvbFV91pxVXmDiR+QMF19x6A==,
+      }
+    engines: { node: '>=12.22.0' }
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+
   react-is@16.13.1:
     resolution:
       {
@@ -9611,6 +9652,15 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
+
+  react-tooltip@5.27.0:
+    resolution:
+      {
+        integrity: sha512-JXROcdfCEbCqkAkh8LyTSP3guQ0dG53iY2E2o4fw3D8clKzziMpE6QG6CclDaHELEKTzpMSeAOsdtg0ahoQosw==,
+      }
+    peerDependencies:
+      react: '>=16.14.0'
+      react-dom: '>=16.14.0'
 
   react@18.3.1:
     resolution:
@@ -11330,6 +11380,12 @@ packages:
         integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==,
       }
 
+  zod@3.23.8:
+    resolution:
+      {
+        integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==,
+      }
+
 snapshots:
   '@alloc/quick-lru@5.2.0': {}
 
@@ -12639,6 +12695,10 @@ snapshots:
   '@graphql-typed-document-node/core@3.2.0(graphql@16.9.0)':
     dependencies:
       graphql: 16.9.0
+
+  '@hookform/resolvers@3.6.0(react-hook-form@7.52.0(react@18.3.1))':
+    dependencies:
+      react-hook-form: 7.52.0(react@18.3.1)
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -14732,6 +14792,8 @@ snapshots:
   class-variance-authority@0.7.0:
     dependencies:
       clsx: 2.0.0
+
+  classnames@2.5.1: {}
 
   clean-css@4.2.4:
     dependencies:
@@ -18483,6 +18545,10 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
+  react-hook-form@7.52.0(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+
   react-is@16.13.1: {}
 
   react-is@18.3.1: {}
@@ -18514,6 +18580,13 @@ snapshots:
       tslib: 2.6.3
     optionalDependencies:
       '@types/react': 18.3.3
+
+  react-tooltip@5.27.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      '@floating-ui/dom': 1.6.7
+      classnames: 2.5.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   react@18.3.1:
     dependencies:
@@ -19580,3 +19653,5 @@ snapshots:
       zen-observable: 0.8.15
 
   zen-observable@0.8.15: {}
+
+  zod@3.23.8: {}

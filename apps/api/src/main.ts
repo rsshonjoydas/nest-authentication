@@ -12,6 +12,10 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname, '..', 'apps/api/email-templates'));
   app.setViewEngine('ejs');
 
+  app.enableCors({
+    origin: '*',
+  });
+
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
   const port = process.env.PORT || 4000;
