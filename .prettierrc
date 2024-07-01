@@ -12,6 +12,7 @@
     "<THIRD_PARTY_MODULES>",
     "",
     "^types$",
+    "^@/graphql/(.*)$",
     "^@/types/(.*)$",
     "^@/config/(.*)$",
     "^@/lib/(.*)$",

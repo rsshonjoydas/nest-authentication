@@ -215,6 +215,15 @@ importers:
 
   apps/web:
     dependencies:
+      '@apollo/client':
+        specifier: ^3.10.8
+        version: 3.10.8(@types/react@18.3.3)(graphql-ws@5.14.3(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(subscriptions-transport-ws@0.11.0(graphql@16.9.0))
+      graphql:
+        specifier: ^16.9.0
+        version: 16.9.0
+      js-cookie:
+        specifier: ^3.0.5
+        version: 3.0.5
       next:
         specifier: 14.2.4
         version: 14.2.4(@babel/core@7.24.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -228,6 +237,9 @@ importers:
         specifier: workspace:^
         version: link:../../packages/ui
     devDependencies:
+      '@types/js-cookie':
+        specifier: ^3.0.6
+        version: 3.0.6
       '@types/node':
         specifier: ^20
         version: 20.14.2
@@ -393,6 +405,27 @@ packages:
       }
     peerDependencies:
       graphql: 14.x || 15.x || 16.x
+
+  '@apollo/client@3.10.8':
+    resolution:
+      {
+        integrity: sha512-UaaFEitRrPRWV836wY2L7bd3HRCfbMie1jlYMcmazFAK23MVhz/Uq7VG1nwbotPb5xzFsw5RF4Wnp2G3dWPM3g==,
+      }
+    peerDependencies:
+      graphql: ^15.0.0 || ^16.0.0
+      graphql-ws: ^5.5.5
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      subscriptions-transport-ws: ^0.9.0 || ^0.11.0
+    peerDependenciesMeta:
+      graphql-ws:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      subscriptions-transport-ws:
+        optional: true
 
   '@apollo/federation-internals@2.8.1':
     resolution:
@@ -3732,6 +3765,41 @@ packages:
         integrity: sha512-+X4WAlOisVWQMikjbcvY2e0rwPsKQ9F688lksZhBcPycBBuii3O7m8FACbDMWDojpAqvjIncrG8J0XHKyQfVeA==,
       }
 
+  '@wry/caches@1.0.1':
+    resolution:
+      {
+        integrity: sha512-bXuaUNLVVkD20wcGBWRyo7j9N3TxePEWFZj2Y+r9OoUzfqmavM84+mFykRicNsBqatba5JLay1t48wxaXaWnlA==,
+      }
+    engines: { node: '>=8' }
+
+  '@wry/context@0.7.4':
+    resolution:
+      {
+        integrity: sha512-jmT7Sb4ZQWI5iyu3lobQxICu2nC/vbUhP0vIdd6tHC9PTfenmRmuIFqktc6GH9cgi+ZHnsLWPvfSvc4DrYmKiQ==,
+      }
+    engines: { node: '>=8' }
+
+  '@wry/equality@0.5.7':
+    resolution:
+      {
+        integrity: sha512-BRFORjsTuQv5gxcXsuDXx6oGRhuVsEGwZy6LOzRRfgu+eSfxbhUQ9L9YtSEIuIjY/o7g3iWFjrc5eSY1GXP2Dw==,
+      }
+    engines: { node: '>=8' }
+
+  '@wry/trie@0.4.3':
+    resolution:
+      {
+        integrity: sha512-I6bHwH0fSf6RqQcnnXLJKhkSXG45MFral3GxPaY4uAl0LYDZM+YDVDAiU9bYwjTuysy1S0IeecWtmq1SZA3M1w==,
+      }
+    engines: { node: '>=8' }
+
+  '@wry/trie@0.5.0':
+    resolution:
+      {
+        integrity: sha512-FNoYzHawTMk/6KMQoEG5O4PuioX19UbwdQKF44yw0nLfOypfQdjtfZzo/UIJWAJ23sNIFbD1Ug9lbaDGMwbqQA==,
+      }
+    engines: { node: '>=8' }
+
   '@xtuc/ieee754@1.2.0':
     resolution:
       {
@@ -6638,6 +6706,12 @@ packages:
       }
     engines: { node: '>=8' }
 
+  hoist-non-react-statics@3.3.2:
+    resolution:
+      {
+        integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==,
+      }
+
   hosted-git-info@7.0.2:
     resolution:
       {
@@ -8816,6 +8890,12 @@ packages:
       }
     engines: { node: '>=12' }
 
+  optimism@0.18.0:
+    resolution:
+      {
+        integrity: sha512-tGn8+REwLRNFnb9WmcY5IfpOqeX2kpaYJ1s6Ae3mn12AeydLkR3j+jSCmVQFoXqU8D41PAJ1RG1rCRNWmNZVmQ==,
+      }
+
   optionator@0.9.4:
     resolution:
       {
@@ -9638,6 +9718,20 @@ packages:
       }
     hasBin: true
 
+  rehackt@0.1.0:
+    resolution:
+      {
+        integrity: sha512-7kRDOuLHB87D/JESKxQoRwv4DzbIdwkAGQ7p6QKGdVlY1IZheUnVhlk/4UZlNUVxdAXpyxikE3URsG067ybVzw==,
+      }
+    peerDependencies:
+      '@types/react': '*'
+      react: '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+
   relateurl@0.2.7:
     resolution:
       {
@@ -9713,6 +9807,13 @@ packages:
         integrity: sha512-U7WjGVG9sH8tvjW5SmGbQuui75FiyjAX72HX15DwBBwF9dNiQZRQAg9nnPhYy+TUnE0+VcrttuvNI8oSxZcocA==,
       }
     hasBin: true
+
+  response-iterator@0.2.6:
+    resolution:
+      {
+        integrity: sha512-pVzEEzrsg23Sh053rmDUvLSkGXluZio0qu8VT6ukrYuvtjVfCbDZH9d6PGXb8HZfzdNZt8feXv/jvUzlhRgLnw==,
+      }
+    engines: { node: '>=0.8' }
 
   restore-cursor@3.1.0:
     resolution:
@@ -10527,6 +10628,13 @@ packages:
         integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==,
       }
 
+  ts-invariant@0.10.3:
+    resolution:
+      {
+        integrity: sha512-uivwYcQaxAucv1CzRp2n/QdYPo4ILf9VXgH19zEIjFx2EJufV16P0JtJVpYHy89DItG6Kwj2oIUjrcK5au+4tQ==,
+      }
+    engines: { node: '>=8' }
+
   ts-jest@29.1.4:
     resolution:
       {
@@ -11210,6 +11318,18 @@ packages:
       }
     engines: { node: '>=12.20' }
 
+  zen-observable-ts@1.2.5:
+    resolution:
+      {
+        integrity: sha512-QZWQekv6iB72Naeake9hS1KxHlotfRpe+WGNbNx5/ta+R3DNjVO2bswf63gXlWDcs+EMd7XY8HfVQyP1X6T4Zg==,
+      }
+
+  zen-observable@0.8.15:
+    resolution:
+      {
+        integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==,
+      }
+
 snapshots:
   '@alloc/quick-lru@5.2.0': {}
 
@@ -11253,6 +11373,31 @@ snapshots:
   '@apollo/cache-control-types@1.0.3(graphql@16.9.0)':
     dependencies:
       graphql: 16.9.0
+
+  '@apollo/client@3.10.8(@types/react@18.3.3)(graphql-ws@5.14.3(graphql@16.9.0))(graphql@16.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(subscriptions-transport-ws@0.11.0(graphql@16.9.0))':
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.9.0)
+      '@wry/caches': 1.0.1
+      '@wry/equality': 0.5.7
+      '@wry/trie': 0.5.0
+      graphql: 16.9.0
+      graphql-tag: 2.12.6(graphql@16.9.0)
+      hoist-non-react-statics: 3.3.2
+      optimism: 0.18.0
+      prop-types: 15.8.1
+      rehackt: 0.1.0(@types/react@18.3.3)(react@18.3.1)
+      response-iterator: 0.2.6
+      symbol-observable: 4.0.0
+      ts-invariant: 0.10.3
+      tslib: 2.6.3
+      zen-observable-ts: 1.2.5
+    optionalDependencies:
+      graphql-ws: 5.14.3(graphql@16.9.0)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      subscriptions-transport-ws: 0.11.0(graphql@16.9.0)
+    transitivePeerDependencies:
+      - '@types/react'
 
   '@apollo/federation-internals@2.8.1(graphql@16.9.0)':
     dependencies:
@@ -14014,6 +14159,26 @@ snapshots:
       '@webassemblyjs/ast': 1.12.1
       '@xtuc/long': 4.2.2
 
+  '@wry/caches@1.0.1':
+    dependencies:
+      tslib: 2.6.3
+
+  '@wry/context@0.7.4':
+    dependencies:
+      tslib: 2.6.3
+
+  '@wry/equality@0.5.7':
+    dependencies:
+      tslib: 2.6.3
+
+  '@wry/trie@0.4.3':
+    dependencies:
+      tslib: 2.6.3
+
+  '@wry/trie@0.5.0':
+    dependencies:
+      tslib: 2.6.3
+
   '@xtuc/ieee754@1.2.0': {}
 
   '@xtuc/long@4.2.2': {}
@@ -16196,6 +16361,10 @@ snapshots:
 
   hexoid@1.0.0: {}
 
+  hoist-non-react-statics@3.3.2:
+    dependencies:
+      react-is: 16.13.1
+
   hosted-git-info@7.0.2:
     dependencies:
       lru-cache: 10.2.2
@@ -17909,6 +18078,13 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
+  optimism@0.18.0:
+    dependencies:
+      '@wry/caches': 1.0.1
+      '@wry/context': 0.7.4
+      '@wry/trie': 0.4.3
+      tslib: 2.6.3
+
   optionator@0.9.4:
     dependencies:
       deep-is: 0.1.4
@@ -18417,6 +18593,11 @@ snapshots:
     dependencies:
       jsesc: 0.5.0
 
+  rehackt@0.1.0(@types/react@18.3.3)(react@18.3.1):
+    optionalDependencies:
+      '@types/react': 18.3.3
+      react: 18.3.1
+
   relateurl@0.2.7:
     optional: true
 
@@ -18449,6 +18630,8 @@ snapshots:
       is-core-module: 2.13.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+
+  response-iterator@0.2.6: {}
 
   restore-cursor@3.1.0:
     dependencies:
@@ -18964,6 +19147,10 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
+  ts-invariant@0.10.3:
+    dependencies:
+      tslib: 2.6.3
+
   ts-jest@29.1.4(@babel/core@7.24.7)(@jest/transform@29.7.0)(@jest/types@29.6.3)(babel-jest@29.7.0(@babel/core@7.24.7))(jest@29.7.0(@types/node@20.14.2)(ts-node@10.9.1(@types/node@20.14.2)(typescript@5.4.5)))(typescript@5.4.5):
     dependencies:
       bs-logger: 0.2.6
@@ -19387,3 +19574,9 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   yocto-queue@1.0.0: {}
+
+  zen-observable-ts@1.2.5:
+    dependencies:
+      zen-observable: 0.8.15
+
+  zen-observable@0.8.15: {}
