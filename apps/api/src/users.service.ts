@@ -12,6 +12,7 @@ import {
   ForgotPasswordDto,
   LoginDto,
   RegisterDto,
+  ResetPasswordDto,
 } from './dto/user.dto';
 import { EmailService } from './email/email.service';
 import { TokenSender } from './utils/sendToken';
@@ -251,5 +252,35 @@ export class UsersService {
     });
 
     return { message: `Your forgot password request successful!` };
+  }
+
+  /**
+   * @description reset password
+   * @function {@link resetPassword}
+   * @param {ResetPasswordDto}
+   * @return {*}
+   * @memberof UsersService
+   */
+  async resetPassword(resetPasswordDto: ResetPasswordDto) {
+    const { password, activationToken } = resetPasswordDto;
+
+    const decoded = await this.jwtService.decode(activationToken);
+
+    if (!decoded || decoded.exp * 1000 < Date.now()) {
+      throw new BadRequestException('Invalid token!');
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const user = await this.prisma.user.update({
+      where: {
+        id: decoded.user.id,
+      },
+      data: {
+        password: hashedPassword,
+      },
+    });
+
+    return { user };
   }
 }

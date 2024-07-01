@@ -60,3 +60,20 @@ export class ForgotPasswordDto {
   @IsEmail({}, { message: 'Email must be valid.' })
   email: string;
 }
+
+@InputType()
+export class ResetPasswordDto {
+  constructor(password: string, activationToken: string) {
+    this.password = password;
+    this.activationToken = activationToken;
+  }
+
+  @Field()
+  @IsNotEmpty({ message: 'Password is required.' })
+  @MinLength(8, { message: 'Password must be at least 8 characters.' })
+  password: string;
+
+  @Field()
+  @IsNotEmpty({ message: 'Activation Token is required.' })
+  activationToken: string;
+}
