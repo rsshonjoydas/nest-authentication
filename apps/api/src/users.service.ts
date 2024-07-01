@@ -283,4 +283,14 @@ export class UsersService {
 
     return { user };
   }
+
+  /**
+   * @description get all users
+   * @function {@link getUsers}
+   * @return {*}
+   * @memberof UsersService
+   */
+  async getUsers() {
+    return this.prisma.user.findMany({});
+  }
 }

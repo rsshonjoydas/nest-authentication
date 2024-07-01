@@ -8,6 +8,7 @@ import {
   RegisterDto,
   ResetPasswordDto,
 } from './dto/user.dto';
+import { User } from './entities/user.entity';
 import { AuthGuard } from './guards/auth.guard';
 import {
   ActivationResponse,
@@ -89,5 +90,10 @@ export class UsersResolver {
   ): Promise<ResetPasswordResponse> {
     const reset = await this.userService.resetPassword(resetPasswordDto);
     return reset;
+  }
+
+  @Query(() => [User])
+  async getUsers() {
+    return this.userService.getUsers();
   }
 }
