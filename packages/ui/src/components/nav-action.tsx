@@ -5,7 +5,6 @@ import { cn } from '../lib/utils';
 import { Icons } from './icons';
 import { ModeToggle } from './mode-toggle';
 import { buttonVariants } from './ui/button';
-import { UserProfile } from './user-profile';
 
 export const NavAction = () => (
   <nav className='flex flex-1 items-center justify-end space-x-1'>
@@ -36,6 +35,5 @@ export const NavAction = () => (
       </div>
     </Link>
     <ModeToggle />
-    <UserProfile />
   </nav>
 );

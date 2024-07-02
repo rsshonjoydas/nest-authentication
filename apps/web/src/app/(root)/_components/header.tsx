@@ -1,12 +1,15 @@
 'use client';
 
-import { cn, NavAction, useScrollTop } from 'ui';
+import { cn, NavAction, UserProfile, useScrollTop } from 'ui';
+
+import useUser from '@/hooks/use-user';
 
 import { MobileSidebar } from './mobile-sidebar';
 import { Navbar } from './navbar';
 
 export const Header = () => {
   const scrolled = useScrollTop();
+  const { user } = useUser();
 
   return (
     <header
@@ -23,6 +26,7 @@ export const Header = () => {
           </div>
         </div>
         <NavAction />
+        {user && <UserProfile user={user} />}
       </div>
     </header>
   );
