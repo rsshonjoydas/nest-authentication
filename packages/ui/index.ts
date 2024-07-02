@@ -12,6 +12,7 @@ export * from './src/components/user-profile';
 export * from './src/components/ui/avatar';
 export * from './src/components/ui/button';
 export * from './src/components/ui/dropdown-menu';
+export * from './src/components/ui/input-otp';
 export * from './src/components/ui/sheet';
 export * from './src/components/ui/sonner';
 
